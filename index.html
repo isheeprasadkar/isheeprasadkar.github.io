@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ishee Prasad Kar — Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17; --muted:#5f5a52; --line:#e4ded3; --paper:#faf7f2; --card:#ffffff;
+    --accent:#c2410c; --accent-soft:#fde7d9; --deep:#14213d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(250,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .brand{font-family:Fraunces,serif;font-weight:600;font-size:18px;color:var(--ink)}
+  .links{display:flex;gap:22px;font-size:14px}
+  .links a{color:var(--muted)}
+  .links a:hover{color:var(--accent);text-decoration:none}
+  @media(max-width:720px){.links{display:none}}
+
+  header{padding:80px 0 64px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}.hero svg{max-width:320px}}
+  .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(38px,6vw,58px);line-height:1.05;letter-spacing:-.01em;margin-bottom:18px}
+  .lede{font-size:18px;color:var(--muted);max-width:540px;margin-bottom:28px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:500;border:1px solid var(--ink);color:var(--ink)}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn:hover{text-decoration:none;opacity:.85}
+
+  section{padding:72px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:Fraunces,serif;font-weight:600;font-size:32px;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:36px}
+  h3{font-size:17px;font-weight:600;margin-bottom:6px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .card .icon{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:14px}
+  .card p{color:var(--muted);font-size:15px}
+
+  .pub{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+  .pub:first-of-type{border-top:none}
+  .pub .yr{font-family:Fraunces,serif;font-size:22px;color:var(--accent)}
+  .pub .title{font-weight:600;font-size:16.5px;margin-bottom:4px}
+  .pub .meta{color:var(--muted);font-size:14.5px}
+  .tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-top:8px}
+  .tag.grey{background:#eeeae3;color:var(--muted)}
+  .placeholder{border:1px dashed #cbbfae;border-radius:10px;padding:14px 16px;color:var(--muted);font-size:14.5px;background:#fffdf9}
+
+  .timeline{position:relative;padding-left:28px}
+  .timeline:before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line)}
+  .t-item{position:relative;margin-bottom:28px}
+  .t-item:before{content:"";position:absolute;left:-27px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+  .t-when{font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.04em}
+  .t-item p{color:var(--muted);font-size:15px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+
+  .contact{background:var(--deep);color:#e8ecf5;border-bottom:none}
+  .contact h2{color:#fff}
+  .contact .sub{color:#aab4cc}
+  .contact a{color:#ffb38a}
+  .c-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .c-box{border:1px solid #2b3a5c;border-radius:12px;padding:18px}
+  .c-box .k{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#8b96b3;margin-bottom:6px}
+  a.plain{color:var(--ink)} a.plain:hover{color:var(--accent)}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  .filters button{font:inherit;font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
+  .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .stats{display:flex;gap:32px;margin-top:30px;flex-wrap:wrap}
+  .stat b{display:block;font-family:Fraunces,serif;font-size:30px;line-height:1}
+  .stat span{font-size:13px;color:var(--muted)}
+  .avatar{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,#14213d,#c2410c);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-size:52px;margin-bottom:18px;overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .note{font-size:12.5px;color:var(--muted)}
+  .c-box .muted{color:#8b96b3;font-size:13px}
+  footer{background:var(--deep);color:#8b96b3;font-size:13px;padding:24px 0;border-top:1px solid #2b3a5c}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Ishee Prasad Kar</span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#current">Current work</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">PhD Scholar · IIT Patna</div>
+      <h1>Plasma-sprayed materials for clean hydrogen and durable surfaces</h1>
+      <p class="lede">I work in Metallurgical and Materials Engineering at the Indian Institute of Technology Patna, using plasma and thermal spray processing to build electrocatalysts for the hydrogen evolution reaction and wear-resistant coatings.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://scholar.google.com/citations?user=07AOJJEAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn" href="#publications">View publications</a>
+        <a class="btn" href="https://www.researchgate.net/profile/Ishee-Kar" target="_blank" rel="noopener">ResearchGate</a>
+        <a class="btn" href="https://in.linkedin.com/in/ishee-prasad-kar-3a71bb1b0" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="cv.html" target="_blank" rel="noopener">CV</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>7</b><span>journal articles</span></div>
+        <div class="stat"><b>19</b><span>citations (Scholar, Nov 2026)</span></div>
+        <div class="stat"><b>1</b><span>patent application</span></div>
+      </div>
+    </div>
+    <!-- Illustration: plasma torch spraying particles onto a substrate -->
+    <svg viewBox="0 0 320 260" aria-label="Plasma spray illustration" role="img">
+      <defs>
+        <linearGradient id="plume" x1="0" x2="1">
+          <stop offset="0" stop-color="#c2410c" stop-opacity=".9"/>
+          <stop offset="1" stop-color="#fb923c" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect x="20" y="105" width="70" height="50" rx="8" fill="#14213d"/>
+      <rect x="88" y="117" width="20" height="26" rx="3" fill="#2b3a5c"/>
+      <path d="M108 130 C150 105, 220 95, 270 92 L270 168 C220 165, 150 155, 108 130 Z" fill="url(#plume)"/>
+      <g fill="#c2410c">
+        <circle cx="140" cy="126" r="3.5"/><circle cx="165" cy="138" r="3"/><circle cx="185" cy="118" r="3.5"/>
+        <circle cx="205" cy="142" r="2.8"/><circle cx="222" cy="125" r="3.2"/><circle cx="240" cy="110" r="2.6"/>
+        <circle cx="248" cy="150" r="3"/><circle cx="196" cy="130" r="2.4"/><circle cx="155" cy="117" r="2.2"/>
+      </g>
+      <rect x="272" y="60" width="14" height="140" fill="#5f5a52"/>
+      <g fill="#fb923c"><rect x="266" y="88" width="6" height="12" rx="2"/><rect x="266" y="104" width="6" height="16" rx="2"/><rect x="266" y="124" width="6" height="14" rx="2"/><rect x="266" y="142" width="6" height="12" rx="2"/></g>
+      <text x="279" y="218" font-family="Inter" font-size="11" fill="#5f5a52" text-anchor="middle">substrate</text>
+      <text x="55" y="178" font-family="Inter" font-size="11" fill="#5f5a52" text-anchor="middle">plasma torch</text>
+      <g stroke="#14213d" stroke-width="1.4" fill="none" opacity=".55">
+        <circle cx="200" cy="40" r="7"/><circle cx="222" cy="30" r="5"/><circle cx="214" cy="56" r="4"/>
+      </g>
+      <text x="236" y="46" font-family="Inter" font-size="11" fill="#14213d" opacity=".7">H₂</text>
+    </svg>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <div class="avatar" id="avatar"><img alt="Ishee Prasad Kar" src="data:image/jpeg;base64,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"></div>
+      <h2>About</h2>
+      <p class="sub">Physicist turned materials engineer.</p>
+    </div>
+    <div>
+      <p style="margin-bottom:14px">I am a doctoral researcher in the Department of Metallurgical and Materials Engineering at IIT Patna, working in the <a href="https://www.iitp.ac.in/~anup/" target="_blank" rel="noopener">Plasma Spray Coating Laboratory</a> under the supervision of Prof. Anup Kumar Keshri. My background is in physics (M.Sc., NIT Durgapur), which I now apply to processing–structure–property questions in sprayed materials.</p>
+      <p>My research asks how high-temperature plasma processing can be used not only to deposit coatings, but to <em>engineer</em> materials — controlling phases, exposing active facets, and exfoliating layered compounds into nanosheets — so that they perform as efficient, self-supported electrodes for hydrogen production.</p>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research interests</h2>
+    <p class="sub">Four connected threads, all built around spray processing.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><path d="M3 12h6l3-7 3 14 3-7h3"/></svg></div>
+        <h3>Plasma &amp; thermal spray processing</h3>
+        <p>Atmospheric plasma spraying as a scalable route to coatings and freestanding electrodes, with control over phase and microstructure.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="7" r="2"/><circle cx="15" cy="15" r="4"/></svg></div>
+        <h3>Electrocatalysis for hydrogen evolution</h3>
+        <p>Low-cost, binder-free HER electrodes based on transition-metal carbides and borides as alternatives to noble-metal catalysts.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><path d="M4 7l8-4 8 4-8 4-8-4z"/><path d="M4 12l8 4 8-4"/><path d="M4 17l8 4 8-4"/></svg></div>
+        <h3>2D materials &amp; heterostructures</h3>
+        <p>Plasma-assisted exfoliation of layered compounds (TiB₂, MoS₂, WS₂) into nanosheets with exposed active facets.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
+        <h3>Protective &amp; corrosion-resistant coatings</h3>
+        <p>Graphene-nanoplatelet-reinforced WC–CoCr and nanodiamond-reinforced NiAl coatings for corrosion, hot-corrosion and molten-salt protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications &amp; patents</h2>
+    <p class="sub">7 peer-reviewed articles (2025–2026). Click a title to find it on Google Scholar; full list on <a href="https://scholar.google.com/citations?user=07AOJJEAAAAJ&hl=en" target="_blank" rel="noopener">my profile</a>.</p>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">All</button><button data-f="Electrocatalysis">Electrocatalysis</button><button data-f="Corrosion">Corrosion</button><button data-f="Plasma spray">Plasma spray</button><button data-f="Nanomaterials">Nanomaterials</button>
+    </div>
+    <div id="publist">
+    <div class="pub" data-tag="Electrocatalysis">
+      <div class="yr">2026</div>
+      <div>
+        <div class="title"><a class="plain" href="https://scholar.google.com/scholar?q=%22Phase-engineered%20WC-based%20freestanding%20electrode%20for%20hydrogen%20evolution%3A%20A%20substitute%20to%20nanostructured%20electrocatalysts%22" target="_blank" rel="noopener">Phase-engineered WC-based freestanding electrode for hydrogen evolution: A substitute to nanostructured electrocatalysts</a></div>
+        <div class="meta"><strong>IP Kar</strong>, S Kumar, N Pandit, CK Nayak, AK Keshri · <em>International Journal of Hydrogen Energy</em>, 264, 156894</div>
+        <span class="tag">Electrocatalysis</span>
+      </div>
+    </div>
+    <div class="pub" data-tag="Corrosion">
+      <div class="yr">2026</div>
+      <div>
+        <div class="title"><a class="plain" href="https://scholar.google.com/scholar?q=%22Microstructure-property%20correlation%20in%20graphene%20nanoplatelet%20reinforced%20HVAF-sprayed%20WC-CoCr%20coatings%20under%20molten%20salt%20corrosion%22" target="_blank" rel="noopener">Microstructure-property correlation in graphene nanoplatelet reinforced HVAF-sprayed WC-CoCr coatings under molten salt corrosion</a></div>
+        <div class="meta">NK Singh, <strong>IP Kar</strong>, S Kumar, K Srivastava, AK Keshri · <em>International Journal of Refractory Metals and Hard Materials</em>, 107828</div>
+        <span class="tag">Corrosion</span>
+      </div>
+    </div>
+    <div class="pub" data-tag="Plasma spray">
+      <div class="yr">2026</div>
+      <div>
+        <div class="title"><a class="plain" href="https://scholar.google.com/scholar?q=%22Role%20of%20splat%20architecture%20for%20enhanced%20electrochemical%20performance%20in%20the%20bond-coat-free%20plasma-sprayed%20alumina%20coatings%22" target="_blank" rel="noopener">Role of splat architecture for enhanced electrochemical performance in the bond-coat-free plasma-sprayed alumina coatings</a></div>
+        <div class="meta">K Srivastava, S Kumar, <strong>IP Kar</strong>, NK Singh, AK Keshri · <em>Materials Research Bulletin</em>, 114347</div>
+        <span class="tag">Plasma spray</span>
+      </div>
+    </div>
+    <div class="pub" data-tag="Corrosion">
+      <div class="yr">2025</div>
+      <div>
+        <div class="title"><a class="plain" href="https://scholar.google.com/scholar?q=%22Graphene-reinforced%20WC-CoCr%20coatings%20by%20high-velocity%20air%20fuel%20spraying%3A%20a%20path%20to%20superior%20corrosion%20protection%22" target="_blank" rel="noopener">Graphene-reinforced WC-CoCr coatings by high-velocity air fuel spraying: a path to superior corrosion protection</a></div>
+        <div class="meta"><strong>IP Kar</strong>, S Kumar, NK Singh, S Sharma, SM Pandey, AK Keshri · <em>Journal of Thermal Spray Technology</em>, 34 (6), 2094–2107</div>
+        <span class="tag">Corrosion</span>
+      </div>
+    </div>
+    <div class="pub" data-tag="Plasma spray">
+      <div class="yr">2025</div>
+      <div>
+        <div class="title"><a class="plain" href="https://scholar.google.com/scholar?q=%22Dielectric%20reliability%20and%20mechanical%20integrity%20of%20bond-coat-free%20alumina%20coatings%20by%20atmospheric%20plasma%20spraying%22" target="_blank" rel="noopener">Dielectric reliability and mechanical integrity of bond-coat-free alumina coatings by atmospheric plasma spraying</a></div>
+        <div class="meta">S Kumar, <strong>IP Kar</strong>, NK Singh, AK Keshri · <em>Ceramics International</em></div>
+        <span class="tag">Plasma spray</span>
+      </div>
+    </div>
+    <div class="pub" data-tag="Corrosion">
+      <div class="yr">2025</div>
+      <div>
+        <div class="title"><a class="plain" href="https://scholar.google.com/scholar?q=%22Enhancement%20in%20the%20Hot%20Corrosion%20Resistance%20of%20Plasma-Sprayed%20NiAl%20Coating%20Through%20Nanodiamond%20Reinforcement%22" target="_blank" rel="noopener">Enhancement in the Hot Corrosion Resistance of Plasma-Sprayed NiAl Coating Through Nanodiamond Reinforcement</a></div>
+        <div class="meta">SS Maurya, AK Grain, <strong>IP Kar</strong>, S Kumar, S Sharma, NK Singh, KK Pandey, et al. · <em>Metallurgical and Materials Transactions A</em>, 56 (5), 1773–1785</div>
+        <span class="tag">Corrosion</span>
+      </div>
+    </div>
+    <div class="pub" data-tag="Nanomaterials">
+      <div class="yr">2025</div>
+      <div>
+        <div class="title"><a class="plain" href="https://scholar.google.com/scholar?q=%22Synergistic%20AlN%40MXene%20Hybrids%20with%20Anti-Corrosion%20and%20Durable%20Electromagnetic%20Wave%20Absorption%22" target="_blank" rel="noopener">Synergistic AlN@MXene Hybrids with Anti-Corrosion and Durable Electromagnetic Wave Absorption</a></div>
+        <div class="meta">S Keshri, N Pandit, S Kumar, <strong>IP Kar</strong>, AK Keshri · <em>ACS Applied Nano Materials</em>, 8 (46), 22445–22454</div>
+        <span class="tag">Nanomaterials</span>
+      </div>
+    </div>
+    </div>
+    <h3 style="margin:36px 0 12px">Patents</h3>
+    <div class="pub" style="border-top:none">
+      <div class="yr">2025</div>
+      <div>
+        <div class="title">A Coating Composition and Method for its Preparation for Industrial Applications</div>
+        <div class="meta">Indian Patent Application No. 202511079395 · filed 21 August 2025 · Danfoss A/S &amp; IIT Patna (graphene-nanoplatelet-reinforced WC-based cermet coating)</div>
+        <span class="tag">Patent application</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="current">
+  <div class="wrap">
+    <h2>Current work</h2>
+    <p class="sub">Manuscripts in preparation.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag grey" style="margin:0 0 12px">In preparation</span>
+        <h3>Plasma-spray exfoliated TiB₂ nanosheets for HER</h3>
+        <p>Exfoliating TiB₂ into nanosheets with exposed prismatic facets, and comparing their hydrogen evolution activity against facet-free counterparts.</p>
+      </div>
+      <div class="card">
+        <span class="tag grey" style="margin:0 0 12px">In preparation</span>
+        <h3>GNP-reinforced WC–CoCr coatings</h3>
+        <p>A further study on GNP-reinforced WC–CoCr, reporting a new property beyond the corrosion behaviour covered in my 2025–26 papers.</p>
+      </div>
+      <div class="card">
+        <span class="tag grey" style="margin:0 0 12px">Planned</span>
+        <h3>MoS₂/WS₂ heterostructure</h3>
+        <p>Building a MoS₂/WS₂ heterostructure through plasma spraying, extending the exfoliation approach to transition-metal dichalcogenides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap" style="margin-bottom:36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <h2>Curriculum vitae</h2>
+    <a class="btn primary" id="cvbtn" href="cv.html" target="_blank" rel="noopener">View full CV</a>
+  </div>
+  <div class="wrap two">
+    <div>
+      <h3 style="margin-bottom:22px;font-size:20px">Education</h3>
+      <div class="timeline">
+        <div class="t-item"><div class="t-when">PRESENT</div><h3>Ph.D., Metallurgical &amp; Materials Engineering</h3><p>Indian Institute of Technology Patna</p></div>
+        <div class="t-item"><div class="t-when">2023</div><h3>M.Sc., Physics</h3><p>National Institute of Technology Durgapur</p></div>
+        <div class="t-item"><div class="t-when">2021</div><h3>B.Sc.</h3><p>Utkal University, Odisha</p></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:22px;font-size:20px">Experience</h3>
+      <div class="timeline">
+        <div class="t-item"><div class="t-when">CURRENT</div><h3>Doctoral Researcher</h3><p>Plasma spray processing and electrocatalysis, IIT Patna</p></div>
+        <div class="t-item"><div class="t-when">PREVIOUS</div><h3>Subject Matter Expert</h3><p>Chegg India</p></div>
+        <div class="t-item"><div class="t-when">PREVIOUS</div><h3>Physics Tutor, Classes 11–12</h3><p>One year of teaching senior-secondary physics</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="sub">Open to collaborations on spray-processed materials and electrocatalysis.</p>
+    <div class="c-row">
+      <div class="c-box"><div class="k">Affiliation</div>Dept. of Metallurgical &amp; Materials Engineering<br>IIT Patna, Bihta, Bihar, India</div>
+      <div class="c-box"><div class="k">Email</div>ishee_2321mm08@iitp.ac.in<br><button id="copyemail" style="margin-top:8px;font:inherit;font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid #2b3a5c;background:transparent;color:#ffb38a;cursor:pointer">Copy</button></div>
+      <div class="c-box"><div class="k">Profiles</div>
+        <a href="https://scholar.google.com/citations?user=07AOJJEAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><br>
+        <a href="https://www.iitp.ac.in/~anup/" target="_blank" rel="noopener">Lab homepage</a><br>
+        <a href="https://www.researchgate.net/profile/Ishee-Kar" target="_blank" rel="noopener">ResearchGate</a><br>
+        <a href="https://in.linkedin.com/in/ishee-prasad-kar-3a71bb1b0" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 Ishee Prasad Kar</div></footer>
+
+<script>
+document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  const f=b.dataset.f;document.querySelectorAll('#publist .pub').forEach(p=>{p.style.display=(f==='all'||p.dataset.tag===f)?'':'none'});
+}));
+const ce=document.getElementById('copyemail');
+ce&&ce.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('ishee_2321mm08@iitp.ac.in');ce.textContent='Copied'}catch(e){ce.textContent='Select & copy'}});
+</script>
+</body>
+</html>
