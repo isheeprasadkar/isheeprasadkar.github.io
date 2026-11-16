@@ -272,9 +272,9 @@
         <div class="stat"><b>19</b><span>citations (Scholar, Nov 2026)</span></div>
         <div class="stat"><b>2</b><span>patent applications</span></div>
       </div>
-      <p class="quip">Fun fact: my plasma jet is <b>hotter than the surface of the Sun</b>. Please don't touch the equipment. 🔥</p>
+      <p class="quip">I spray things at <b>10,000 °C</b> for a living. Professionally. 🔥</p>
     </div>
-    <svg class="hero-anim" viewBox="0 0 340 270" role="img" aria-label="Animated plasma spray: molten particles fly from the torch and build a coating"><title>Careful: about 10,000 °C. Look, don't touch!</title>
+    <svg class="hero-anim" viewBox="0 0 340 270" role="img" aria-label="Animated plasma spray: molten particles fly from the torch and build a coating">
       <defs>
         <linearGradient id="plume" x1="0" x2="1"><stop offset="0" stop-color="#ff6a3d" stop-opacity=".95"/><stop offset=".55" stop-color="#ffb347" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></linearGradient>
         <radialGradient id="glow"><stop offset="0" stop-color="#fff3c4"/><stop offset="1" stop-color="#ff6a3d" stop-opacity="0"/></radialGradient>
@@ -518,10 +518,11 @@
     <h2>The lighter side</h2>
     <p class="sub">Science is serious. Scientists, occasionally, are not.</p>
     <div class="fun-grid">
-      <div class="fun"><span class="e">🔥</span><h3>Hotter than the Sun</h3><p>A plasma spray jet runs at around 10,000 °C, almost twice the temperature of the Sun's surface (about 5,500 °C). My lab gets warm.</p></div>
-      <div class="fun"><span class="e">🏏</span><h3>Faster than a fast bowler</h3><p>Molten droplets in plasma spraying fly at hundreds of metres per second. A 150 km/h delivery manages about 42 m/s. Sorry, cricket.</p></div>
-      <div class="fun"><span class="e">💥</span><h3>"Splat" is a technical term</h3><p>Every coating is built from millions of flattened droplets called splats. Yes, really. Materials scientists name things honestly.</p></div>
-      <div class="fun"><span class="e">📝</span><h3>PhD lessons learned</h3><p>Reviewer 2 is not a person, it is a state of mind. And every XRD peak you don't expect is "interesting".</p></div>
+      <div class="fun"><span class="e">🌩️</span><h3>The fourth state of matter</h3><p>I work with plasma, the fourth state of matter. The first three were too boring.</p></div>
+      <div class="fun"><span class="e">🔥</span><h3>Hotter than the Sun</h3><p>A plasma jet runs at around 10,000 °C, about twice the Sun's surface temperature.</p></div>
+      <div class="fun"><span class="e">💧</span><h3>Water-splitting enthusiast</h3><p>I spend my days convincing water to give up its hydrogen. It's a slow negotiation.</p></div>
+      <div class="fun"><span class="e">🧪</span><h3>Platinum is expensive</h3><p>So I try to build electrodes that are almost as good, at a fraction of the price.</p></div>
+      <div class="fun"><span class="e">🔁</span><h3>Reproducibility</h3><p>"My results are reproducible. I've reproduced the failure five times."</p></div>
     </div>
   </div>
 </section>
@@ -590,7 +591,7 @@
   </div>
 </section>
 
-<footer><div class="wrap"><span>© 2026 Ishee Prasad Kar · IIT Patna · No coatings were harmed in the making of this website.</span><div class="socials">
+<footer><div class="wrap"><span>© 2026 Ishee Prasad Kar · IIT Patna</span><div class="socials">
         <a class="soc gs" href="https://scholar.google.com/citations?user=07AOJJEAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
         <a class="soc rg" href="https://www.researchgate.net/profile/Ishee-Kar" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="ai ai-researchgate"></i></a>
         <a class="soc li" href="https://in.linkedin.com/in/ishee-prasad-kar-3a71bb1b0" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -628,7 +629,7 @@ show(0);timer=setInterval(()=>show((step+1)%4),3500);
 const root=document.documentElement,tb=document.getElementById('themeBtn');
 function setTheme(t){root.dataset.theme=t;tb.innerHTML=t==='dark'?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';store.set('theme',t)}
 setTheme(store.get('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-tb.addEventListener('click',()=>{setTheme(root.dataset.theme==='dark'?'light':'dark');toast(root.dataset.theme==='dark'?'Lights off. The plasma still glows. 🌙':'Lights on. ☀️')});
+tb.addEventListener('click',()=>setTheme(root.dataset.theme==='dark'?'light':'dark'));
 console.log('%cHello, curious scientist! 👋','font-size:16px;color:#e4572e;font-weight:bold');console.log('If you are reading the source code, we should probably collaborate: ishee_2321mm08@iitp.ac.in');
 // language
 const orig={};document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el=>{orig[el.dataset.i18n||el.dataset.i18nHtml]=el.innerHTML});
