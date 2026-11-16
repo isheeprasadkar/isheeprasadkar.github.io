@@ -22,12 +22,12 @@
   ol{padding-left:20px;margin:0}
   ol li{margin-bottom:8px}
   .chips span{display:inline-block;background:#fde7d9;color:#9a3412;border-radius:999px;padding:2px 10px;font-size:12.5px;margin:0 6px 6px 0}
-  .back{display:block;max-width:820px;margin:20px auto 0;font-size:13px;color:#c2410c;text-decoration:none}
-  @media print{body{background:#fff}.page{box-shadow:none;margin:0}.back{display:none}}
+  .back{max-width:820px;margin:20px auto 0;font-size:13px}
+  @media print{@page{margin:14mm}body{background:#fff;font-size:12.5px}.page{box-shadow:none;margin:0;padding:0}.back{display:none!important}h2{break-after:avoid}.row,li{break-inside:avoid}}
 </style>
 </head>
 <body>
-<a class="back" href="index.html">← Back to website</a>
+<div class="back" style="display:flex;justify-content:space-between;align-items:center"><a href="index.html" style="color:#c2410c;text-decoration:none">← Back to website</a><button onclick="window.print()" style="font:inherit;font-size:13px;font-weight:600;padding:8px 16px;border-radius:999px;border:0;background:linear-gradient(135deg,#e4572e,#f59e0b);color:#fff;cursor:pointer">Print / Save as PDF</button></div>
 <div class="page">
   <header>
     <div>
