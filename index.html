@@ -224,6 +224,15 @@
   .quip b{color:#ffd7b8;font-weight:600}
   .brand{white-space:nowrap}
   @media(max-width:900px){.links{gap:16px;font-size:13px}}
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+  .sk{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .25s,box-shadow .25s}
+  .sk:hover{transform:translateY(-4px);box-shadow:0 18px 34px -22px rgba(15,27,51,.4)}
+  .sk-h{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .sk-h i{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:17px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+  .sk-h h3{margin:0;font-size:17px}
+  .chips2{display:flex;flex-wrap:wrap;gap:8px}
+  .chips2 span{font-size:13.5px;padding:5px 12px;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--ink);transition:all .2s}
+  .chips2 span:hover{border-color:var(--accent);color:var(--accent)}
 </style>
 </head>
 <body>
@@ -234,6 +243,7 @@
     <div class="links">
       <a href="#about" data-i18n="navAbout">About</a>
       <a href="#research" data-i18n="navResearch">Research</a>
+      <a href="#skills">Skills</a>
       <a href="#publications" data-i18n="navPubs">Publications</a>
       <a href="#fun">Fun</a>
       <a href="#news" data-i18n="navNews">News</a>
@@ -378,6 +388,20 @@
   </div>
 </section>
 
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="sub">What I bring to the lab, from making materials to proving they work.</p>
+    <div class="skills">
+      <div class="sk"><div class="sk-h"><i class="fa-solid fa-fire-flame-curved"></i><h3>Processing &amp; fabrication</h3></div><div class="chips2"><span>Atmospheric plasma spraying</span><span>HVAF spraying</span><span>Plasma-spray exfoliation of nanomaterials</span><span>Freestanding electrode fabrication</span><span>Cermet &amp; ceramic coatings</span></div></div>
+      <div class="sk"><div class="sk-h"><i class="fa-solid fa-microscope"></i><h3>Materials characterisation</h3></div><div class="chips2"><span>SEM / FESEM &amp; EDS</span><span>XRD phase analysis</span><span>XPS</span><span>Raman spectroscopy</span><span>HRTEM &amp; SAED</span><span>BET surface area</span><span>Contact angle &amp; wettability</span></div></div>
+      <div class="sk"><div class="sk-h"><i class="fa-solid fa-bolt"></i><h3>Electrochemistry</h3></div><div class="chips2"><span>LSV &amp; overpotential</span><span>Tafel analysis</span><span>EIS</span><span>C<sub>dl</sub> / ECSA</span><span>Stability testing</span><span>Corrosion testing</span></div></div>
+      <div class="sk"><div class="sk-h"><i class="fa-solid fa-chart-line"></i><h3>Data &amp; software</h3></div><div class="chips2"><span>OriginPro</span><span>ImageJ / Fiji</span><span>CasaXPS</span><span>VESTA</span><span>MS Office</span></div></div>
+      <div class="sk"><div class="sk-h"><i class="fa-solid fa-chalkboard-user"></i><h3>Communication &amp; teaching</h3></div><div class="chips2"><span>Scientific writing</span><span>Manuscript &amp; patent preparation</span><span>Poster presentations</span><span>Physics teaching (Class 11–12)</span><span>Online tutoring (Chegg)</span></div></div>
+    </div>
+  </div>
+</section>
 
 <section id="publications">
   <div class="wrap">
